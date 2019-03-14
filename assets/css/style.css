@@ -1,0 +1,41 @@
+body{
+    background-image: url("../images/pat.jpg");
+}
+
+.header{
+    align-content: center;
+    color: white;
+    margin-top: 100px;
+    height: 100px;
+    background-image: linear-gradient( to bottom right, rgb(44, 53, 136), rgb(44, 34, 77));
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1em;
+    border: 5px outset rgb(105, 50, 105);
+    border-radius: 300px;
+    /*font-family: 'Major Mono Display', monospace;*/
+    font-family: 'Staatliches', cursive;
+
+    
+}
+
+.content{
+    height: 600px;
+    background-image: linear-gradient( to bottom right, rgb(44, 53, 136), rgb(68, 49, 131));
+    margin-top:50px;
+    margin-bottom: 100px;
+    border: 5px outset rgb(105, 50, 105);
+    border-radius: 20px;
+    color:white;
+    font-size:100px;
+    text-align: center;
+    padding:75px;
+    font-family: 'Staatliches', cursive;
+    /*font-family: 'Marcellus SC', serif;*/
+    /*font-family: 'Suez One', serif;*/
+    line-height: 200px;
+    word-spacing: 20px;
+    letter-spacing: 20px;
+}
+
+
