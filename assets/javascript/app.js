@@ -8,6 +8,17 @@ var timeOut = false;
 var switchSlideDelay = 3;
 var gameReady = false;
 var intervalId;
+var answers = [
+    firstAns = {
+        a : 1,
+        b : 2,
+        c : 2,
+        d : 1,
+    }
+    secondAns = {
+
+    }
+]
 
 $(".content").click(function(){
     start();

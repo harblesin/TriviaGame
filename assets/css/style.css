@@ -39,3 +39,15 @@ body{
 }
 
 
+.timer{
+    height: 600px;
+    background-image: linear-gradient( to bottom right, rgb(44, 53, 136), rgb(68, 49, 131));
+    margin-top:50px;
+    margin-bottom: 100px;
+    border: 5px outset rgb(105, 50, 105);
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Staatliches', cursive;
+}
