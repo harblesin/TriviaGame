@@ -20,7 +20,7 @@ body{
 }
 
 .content{
-    height: 600px;
+    
     background-image: linear-gradient( to bottom right, rgb(44, 53, 136), rgb(68, 49, 131));
     margin-top:50px;
     margin-bottom: 100px;
@@ -31,7 +31,7 @@ body{
     text-align: center;
     padding:75px;
     font-family: 'Staatliches', cursive;
-    /*font-family: 'Marcellus SC', serif;*/
+    
     /*font-family: 'Suez One', serif;*/
     line-height: 200px;
     word-spacing: 20px;
@@ -40,14 +40,25 @@ body{
 
 
 .timer{
-    height: 600px;
     background-image: linear-gradient( to bottom right, rgb(44, 53, 136), rgb(68, 49, 131));
-    margin-top:50px;
-    margin-bottom: 100px;
-    border: 5px outset rgb(105, 50, 105);
-    border-radius: 20px;
     color: white;
     text-align: center;
+    margin-bottom:40px;
     font-size: 30px;
     font-family: 'Staatliches', cursive;
+}
+
+h2{
+    font-family: 'Marcellus SC', serif;
+    margin-top:50px;
+    margin-bottom:50px;
+    letter-spacing: 1px;
+}
+
+li{
+    font-size: 20px;
+}
+input, form{
+    font-size:20px;
+    font-family: 'Marcellus SC', serif;
 }
