@@ -1,7 +1,12 @@
+/*this css files may include some unused or redundunt information as it is 
+carryover from another abandoned attempt and styling
+
+sets the background to the gif in the assets/images folder*/
 body{
     background-image: url("../images/giphy.gif");
 }
 
+/*styling for the div that sit above the content holding the title of the game*/
 .header{
     align-content: center;
     color: white;
@@ -14,12 +19,10 @@ body{
     border: 5px outset rgb(105, 50, 105);
     border-radius: 300px;
     font-family: 'Staatliches', cursive;
-
-    
 }
 
+/* styling applied to the main content of the page, regardless of changes*/
 .content{
-    
     background-image: linear-gradient( to bottom right, rgb(44, 53, 136), rgb(68, 49, 131));
     margin-top:50px;
     margin-bottom: 100px;
@@ -30,14 +33,13 @@ body{
     text-align: center;
     padding:75px;
     font-family: 'Staatliches', cursive;
-    
-    /*font-family: 'Suez One', serif;*/
     line-height: 200px;
     word-spacing: 20px;
     letter-spacing: 20px;
 }
 
-
+/*styling applied to the timer div that sits on top of the contnt and has
+its own seperate styled from the content section*/
 .timer{
     background-image: linear-gradient( to bottom right, rgb(44, 53, 136), rgb(68, 49, 131));
     color: white;
@@ -47,6 +49,7 @@ body{
     font-family: 'Staatliches', cursive;
 }
 
+/*Seperates the styling yet again for the more prominent question text and div*/
 h2{
     font-family: 'Marcellus SC', serif;
     margin-top:50px;
@@ -54,13 +57,13 @@ h2{
     letter-spacing: 1px;
 }
 
-li{
-    font-size: 20px;
-}
+/*styling for the individual answers for each question*/
 input, form{
     font-size:20px;
     font-family: 'Marcellus SC', serif;
 }
+
+/*styling specifically for the done button at the bottom of the content div*/
 .done{
     align-content: center;
     color: white;
@@ -75,6 +78,7 @@ input, form{
     font-family: 'Staatliches', cursive;
 }
 
+/*styling for the end results page at the end of the game that displays the results*/
 p{
     margin-top: 30px;
     margin-bottom: 30px;
