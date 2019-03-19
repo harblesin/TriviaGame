@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var timeRemaining = 10;
+    var timeRemaining = 30;
     var pageNum = 0;
     var correctAns = 0;
     var incorrectAns = 0;
@@ -11,7 +11,7 @@ $(document).ready(function () {
     var delayRunning = false;
     var doneClicked = false;
     var ended = true;
-    var timer  = $(".timer");
+    var timer = $(".timer");
     var questions = [
 
         "Which of these is not a primary color?",
@@ -46,7 +46,7 @@ $(document).ready(function () {
             "Plato",
             "Diogenes",
             "Hippocrates",
-            "Friedric Nietzche"
+            "Friedrich Nietzsche"
         ],
         [
             "A dark end",
@@ -66,85 +66,132 @@ $(document).ready(function () {
             "Fighting for the People",
             "Dead"
         ]
-       
+
     ]
-    
 
-function populate(){
 
-    if(!clockRunning){
-    $(".content").empty();
-    $(".content").append(timer);
-    
-    timer.text("Time Remaining: " + timeRemaining + " Seconds");
-    intervalId = setInterval (timeLeft, 1000);
-    
-    var form = $("<form>");
+    function populate() {
 
-    for(var  j = 0; j < questions.length; j++){
-        var question = $("<h2>")
-        $(".content").append(question);
-        question.text(questions[j]);
-        question.append(form);
+        if (!clockRunning) {
+            $(".content").empty();
+            $(".content").append(timer);
 
-        for(var i = 0; i < 4; i++){
-        var answer = $("<form><br><input type = 'radio' name = 'answer' value = answers[j][i]>" 
-        + answers[j][i] + "</form>");
-        //answer.text(answers[j][i]);
-        question.append(answer);
-
-          }
-    
-    }
-  
-    }
-    else{
-        clockRunning = true;
-    }
-}
-    
-   function timeLeft(){
-    
-        
-       if(timeRemaining == 0){
-           $(".content").empty();
-           $(".content").append(timer);
-           timer.text("Oh no! You've run out of time!");
-           timer.append($("<br>"))
-           timer.append("Here are your results!");
-           timer.insertAfter("Correct Answers: " + correctAns);
-           ("Incorrect Answers: " + incorrectAns).insertAfter(timer);
-    
-            //intervalId = setInterval (switchDelay, 1000);
-           
-       }
-
-       else if(doneClicked){
-        $(".content").empty();
-        $(".content").append(timer);
-        timer.text("All done!");
-        ("Here are your results!").insertAfter(timer);
-        timer.insertAfter("Correct Answers: " + correctAns);
-        ("Incorrect Answers: " + incorrectAns).insertAfter(timer);
-       }
-
-       else{
-           clockRunning = true;
-            timeRemaining--    
             timer.text("Time Remaining: " + timeRemaining + " Seconds");
-       }
-    
+            intervalId = setInterval(timeLeft, 1000);
 
-        
+
+            for (var j = 0; j < questions.length; j++) {
+                var question = $("<h2>")
+                $(".content").append(question);
+                var form = $("<form>");
+
+                question.text(questions[j]);
+                question.append(form);
+                //question.append(form);
+
+                for (var i = 0; i < 4; i++) {
+                    var answer = $("<br><input type = 'radio' name = 'choice'>" +
+                        answers[j][i] + "</input>");
+                    answer.val(answers[j][i])
+                    form.append(answer);
+                    answer.click(function () {
+
+                        if ($(this).val() == "purple" ||
+                            $(this).val() == "Salvador Dali" ||
+                            $(this).val() == "Grant Wood" ||
+                            $(this).val() == "Diogenes" ||
+                            $(this).val() == "The Ides of March" ||
+                            $(this).val() == "I refuse to answer this question" ||
+                            $(this).val() == "Fighting for the People") {
+                            correctAns++
+                            console.log(correctAns);
+                        } else {
+                            incorrectAns++
+                        }
+                        console.log($(this).val());
+
+                    });
+                }
+
+            }
+
+
+
+            doneButton = $("<div>");
+            doneButton.html("DONE");
+            doneButton.addClass("done");
+            form.append(doneButton);
+
+        } else {
+            clockRunning = true;
+            $(".done").click(function () {
+
+                doneClicked = true;
+                $(".content").empty();
+                $(".content").append(timer);
+                timer.text("All done!");
+                var results = $("<p>");
+                results.html("Here are your results!");
+                timer.append(results);
+                var correctAnswers = $("<p>");
+                correctAnswers.html("Correct Answers: " + correctAns + " out of 7!");
+                results.append(correctAnswers);
+                var incorrectAnswers = $("<p>");
+                incorrectAnswers.html("Incorrect Answers: " + incorrectAns + " out of 7!");
+                correctAnswers.append(incorrectAnswers);
+
+            })
+        }
     }
-    
- 
-    $(".content").click(function(){
-    
-        populate();
-    }) ;
-    
 
-    
+    function timeLeft() {
+
+
+        if (timeRemaining == 0) {
+            $(".content").empty();
+            $(".content").append(timer);
+            timer.text("Oh no! You've run out of time!");
+            var results = $("<p>");
+            results.html("Here are your results!");
+            timer.append(results);
+            var correctAnswers = $("<p>");
+            correctAnswers.html("Correct Answers: " + correctAns + " out of 7!");
+            results.append(correctAnswers);
+            var incorrectAnswers = $("<p>");
+            incorrectAnswers.html("Incorrect Answers: " + incorrectAns + " out of 7!");
+            correctAnswers.append(incorrectAnswers);
+
+            //intervalId = setInterval (switchDelay, 1000);
+
+        } else if (doneClicked) {
+            $(".content").empty();
+            $(".content").append(timer);
+            timer.text("All done!");
+            var results = $("<p>");
+            results.html("Here are your results!");
+            timer.append(results);
+            var correctAnswers = $("<p>");
+            correctAnswers.html("Correct Answers: " + correctAns + " out of 7!");
+            results.append(correctAnswers);
+            var incorrectAnswers = $("<p>");
+            incorrectAnswers.html("Incorrect Answers: " + incorrectAns + " out of 7!");
+            correctAnswers.append(incorrectAnswers);
+            
+
+        } else {
+            clockRunning = true;
+            timeRemaining--
+            timer.text("Time Remaining: " + timeRemaining + " Seconds");
+        }
+
+
+
+    }
+
+    $(".content").click(function () {
+
+        populate();
+
     });
-    
+
+});
